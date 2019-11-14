@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mohit Chandra Joshi">
+    <title>e-Teachers - Dashboard</title>
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/fontawesome-free/css/all.css" rel="stylesheet" >
+    <link href="assets/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+    <link href="assets/css/sb-admin.css" rel="stylesheet">
+    <link href="assets/css/mycss.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" >
+
+</head>
+
+<body id="page-top">
+
+    <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+        <a class="navbar-brand mr-1" href="index.html">e-Teachers</a>
+        <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
+
+        <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+            <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+            <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
+            </div>
+            </div>
+        </form>
+    </nav>
+    
+      
+    <div id="wrapper">
+
+       <ul class="sidebar navbar-nav">
+            <li class="nav-item active">
+            <a class="nav-link" href="index.html" style="cursor:pointer">
+            <i class="fas fa-fw fa-home"></i> 
+            <span>Home</span>
+            </a>
+            </li>
+            <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-fw fa-user-md"></i>
+            <span>Login/SignUP</span>
+            </a>
+            <div class="dropdown-menu" style="cursor:pointer;" aria-labelledby="pagesDropdown">
+            <h6 class="dropdown-header">Login Screens:</h6>
+            <a class="dropdown-item" data-toggle="modal" data-target="#myModal">Login</a>
+            <a class="dropdown-item" data-dismiss="modal" data-toggle="modal" data-target="#myModal2">Register</a>
+            <a class="dropdown-item" data-dismiss="modal" data-toggle="modal" data-target="#myModal3">Forgot Password</a>
+            </div>
+            </li>
+
+            <li class="nav-item">
+            <a class="nav-link" style="cursor:pointer" data-toggle="modal" data-target="#myModalA" >
+                <i class="fas fa-fw fa-info-circle"></i> <span>About</span></a>
+            </li> 
+            
+        </ul>
+
+    <div id="content-wrapper" style="background-image:url('assets/img/3.jpg'); background-size:100%;">
+    <div class="container-fluid">
+
+
+<ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#">Home</a></li>
+    <li class="breadcrumb-item active">Faculty</li>
+</ol>
+
+<div class="row">
+<div class="container">
+<div class="row">
+    <div class="col-lg-10" style="background-color: aliceblue; border-radius: 5px;">
+      
+        
+    <div class="row">
+        
+        <div class="row col-md-12">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="active">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+            </li>            
+            <!--<li>
+            <a class="nav-link" id="pub-tab" data-toggle="tab" href="#pub" role="tab" aria-controls="pub" aria-selected="false">Publications</a>
+            </li>
+            <li>
+            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Skills/Achievements</a>
+            </li-->
+            <li>
+            <a class="nav-link" id="smaterial-tab" data-toggle="tab" href="#smaterial" role="tab" aria-controls="smaterial" aria-selected="false">Study Material</a>
+            </li>        
+            <li>
+             
+            <li>
+            <a class="nav-link" id="feedback-tab" data-toggle="tab" href="#feedback" role="tab" aria-controls="ulinks" aria-selected="false">Feedback</a>
+            </li>           
+            <!--li>
+            <a class="nav-link" id="downloads-tab" data-toggle="tab" href="#downloads" role="tab" aria-controls="downloads" aria-selected="false">Downloads</a>
+            </li-->
+        </ul>
+        </div>
+        
+        <div class="row col-md-12">
+        <div class="tab-content" style="padding:30px">
+            
+        <div id="profile" class="tab-pane fade in active">
+            <div class="row" style="padding:30px">
+            <div class="col-md-5" id="tpic">
+                
+            </div>
+            <div class="col-md-7" style="padding:4%;">
+                <div class="row"><h2 id='tname'></h2></div>
+                <div class="row"><br></div>
+                <div class="row"><h6>Latest Qualification : &nbsp;</h6><div id="tlq"></div></div>
+                <div class="row">Current Status : &nbsp;<div id="tcst"></div></div>
+                <div class="row"><br></div>
+                <div class="row">Designation : &nbsp;<div id="tdsg"></div></div>
+                <div class="row">Work Place Address : &nbsp;<div id="twpa"></div></div>
+                <div class="row"><br></div>
+                <div class="row"><h7>Contact :</h7>&nbsp;<div id="tcont"></div></div>
+                <div class="row"><h7>Email : </h7>&nbsp;<div id="temail"></div></div>
+            </div>
+            </div> 
+        </div>        
+            
+        <!--div id="pub" class="tab-pane fade">
+        <h3>Publications</h3>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+            
+        <div id="contact" class="tab-pane fade">
+        <h3>Skills/Qualifications</h3>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+        </div--> 
+            
+        <div id="smaterial" class="tab-pane fade">
+            <div class="row">
+            <div class="col-md-7">
+            <ul class="nav nav-tabs flex-column"  id="myTab" role="tablist">
+                <li class="active">
+                <a class="nav-link" id="syllabus-tab" data-toggle="tab" href="#syllabus" role="tab" aria-controls="syllabus" aria-selected="false">Syllabus</a>
+                </li>
+                <li>
+                <a class="nav-link" id="lecture-tab" data-toggle="tab" href="#lecture" role="tab" aria-controls="lecture" aria-selected="false">Lecture Plan</a>
+                </li>
+                <li>
+                <a class="nav-link" id="notes-tab" data-toggle="tab" href="#notes" role="tab" aria-controls="notes" aria-selected="false">Concept Notes</a>
+                </li> 
+                <li>
+                <a class="nav-link" id="assignments-tab" data-toggle="tab" href="#assignments" role="tab" aria-controls="assignments" aria-selected="false">Assignments</a>
+                </li> 
+                <li>
+                <a class="nav-link" id="oldpapers-tab" data-toggle="tab" href="#oldpapers" role="tab" aria-controls="oldpapers" aria-selected="false">Old Papers</a>
+                </li>   
+                
+            </ul>
+            </div>
+            <div class='tab-content col-md-5'>
+                <div id="syllabus" class="tab-pane fade in active">
+                    
+                </div> 
+                
+                <div id="lecture" class="tab-pane fade">
+                
+                </div>
+
+                <div id="notes" class="tab-pane fade">
+                
+                </div>
+                
+                <div id="assignments" class="tab-pane fade">
+                
+                </div>
+                <div id="oldpapers" class="tab-pane fade">
+                
+                </div> 
+            </div>
+            </div>
+        </div> 
+        <div id="feedback" class="tab-pane fade">
+    <h5>Fill Feedback For the Faculty :</h5>
+    <div id='fstatus' style='color:green;'></div>
+    <div id='errfstatus' style='color:red;'></div>
+    <div class="form-group">
+        <input type="email" name="st_email" id="st_email" onblur="validateEmail(this);" placeholder="Email Address" class="form-control" required />
+        <div id='erremail' style='color:red;'></div>
+        <div id='succemail' style='color:green;'></div>
+    </div>
+
+    <div class="form-group">
+        <input name="std_name" id="std_name" placeholder="Enter Your Name Here" class="form-control" type="text" required />
+        <div id='errname' style='color:red;'></div>
+    </div>  
+    
+    <div class="form-group">
+        <textarea name="comment" id="comment" placeholder="Comment" class="form-control" required ></textarea>
+        <div id='errcomment' style='color:red;'></div>
+    </div>
+
+    <div class="form-group">
+        <button class='btn btn-primary addfeedback'>Submit</button>
+    </div>    
+    </div>       
+        <!--div id="ulinks" class="tab-pane fade">
+        <h3>Useful Links</h3>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+        </div-->        
+            
+        <!--div id="downloads" class="tab-pane fade">
+        <h3>Downloads</h3>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+        </div-->
+        
+        </div>
+        </div>
+    </div>
+    
+    </div>
+</div>
+</div>
+</div>
+        
+            
+
+    
+    </div>
+    </div>
+    
+    <div class="modal" id="myModal">            
+        <div class="container">
+        <div class="card card-login mx-auto mt-5">
+        <div class="card-header">Login 
+            <button type="button" class="close" data-dismiss="modal" style="font-size:30px;">&times;</button>
+        </div>
+            
+        <div class="card-body">
+        <form action="#" id="frmlogin" method="POST">
+            <div class="form-group">
+            <input type="email" name="lemail" id="lemail" class="form-control" placeholder="Email address" required="required">
+            </div>
+
+            <div class="form-group">
+            <input type="password" name="lpassword" id="lpassword" class="form-control" placeholder="Password" required="required" />
+            </div>
+
+
+            <select name="lusrtype" id="lusrtype" class="form-control form-group" required="required" >
+                <option value="faculty">Faculty</option>
+                <option value="admin">Admin</option>
+            </select>
+
+
+            <input class="btn btn-primary btn-block" id="login" type="button" name="login" value="Login" />
+
+            <center><b>or</b></center>
+
+            <div class="text-center">
+                <a class="d-block small mt-3" data-dismiss="modal" data-toggle="modal" data-target="#myModal2"> 
+                <button class="btn btn-success">Register an Account</button></a>
+                <a class="d-block small mt-3" data-dismiss="modal" data-toggle="modal" data-target="#myModal3"> 
+                <button class="btn btn-link">Forgot Password?</button></a>
+            </div> 
+        </form>  
+        </div>
+            
+        </div>
+        </div>
+    </div>
+        
+    <div class="modal" id="myModal2">
+    <div class="container">
+      <div class="card card-login mx-auto mt-5">
+        <div class="card-header">Register an Account 
+            <button type="button" class="close" data-dismiss="modal" style="font-size:30px;">&times;</button>
+        </div>
+        <div class="card-body">
+            <form action="#" id="frmreg" method="POST">
+
+            <div class="form-group">
+            <input type="email" name="remail" id="remail" class="form-control" placeholder="Email address" required />
+            </div>
+
+            <div class="form-group">
+            <input type="password" name="rpassword" id="rpassword" class="form-control" placeholder="Password" required />
+            </div>
+
+            <div class="form-group">
+            <input type="password" name="rcpassword" id="rcpassword" class="form-control" placeholder="Confirm password" required  />
+            </div>
+                
+            <input class="btn btn-primary btn-block" type="button" name="etsignup" id="etsignup" value="Register" />
+            </form>
+            
+            <div class="text-center">
+            <a class="d-block small mt-3" data-dismiss="modal" data-toggle="modal" data-target="#myModal">
+            <button class="btn btn-primary active">Login</button></a>
+            <a class="d-block small mt-3" data-dismiss="modal" data-toggle="modal" data-target="#myModal3">
+            <button class="btn btn-link">Forgot Password?</button></a>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+    </div>
+    
+    <div class="modal" id="myModal3">
+    <div class="container">
+        <div class="card card-login mx-auto mt-5">
+        <div class="card-header">Reset Password 
+            <button type="button" class="close" data-dismiss="modal" style="font-size:30px;">&times;</button>
+        </div>
+
+        <div class="card-body">
+        <div class="text-center mb-4">
+        <h4>Forgot your password?</h4>
+        <p>Enter your email address and we will send you instructions on how to reset your password.</p>
+        </div>
+
+        <form>
+        <div class="form-group">
+        <input type="email" id="inputEmail" class="form-control" placeholder="Enter email address" required="required" >
+        </div>
+        <a class="btn btn-primary btn-block" href="login.html">Reset Password</a>
+        </form>
+
+        <div class="text-center">
+            <a class="d-block small mt-3" data-dismiss="modal" data-toggle="modal" data-target="#myModal2"> 
+            <button class="btn btn-success">Register an Account</button></a>
+            <a class="d-block small mt-3" data-dismiss="modal" data-toggle="modal" data-target="#myModal">
+            <button class="btn btn-primary active">Login</button></a>
+        </div>
+        </div>
+        </div>
+    </div>
+    </div>
+    </div>
+<div id="myModalREG" class="modal fade">
+    <div class="modal-dialog modal-confirm">
+    <div class="modal-content">
+    <div class="modal-header">
+        <div class="icon-box"><i class="material-icons">&#xE876;</i></div>
+        <h4 class="modal-title">Awesome!</h4>   
+    </div>
+    <div class="modal-body"><p class="text-center">You have Registered Successfully</p></div>
+    <div class="modal-footer"><button class="btn btn-success btn-block" data-dismiss="modal">OK</button></div>
+    </div>
+    </div>
+</div>
+
+<div class="modal" id="myModalSLB">            
+    
+    <div class="card card-login mx-auto mt-5" id='SLB'>
+    
+    </div>
+</div>
+
+<div id="myModalA" class="modal">
+    <div class="card card-login mx-auto mt-5">
+        <div class="card-header">
+            <button type="button" class="close" data-dismiss="modal" style="font-size:30px;">&times;</button>
+        <h4>e-Teachers</h4>
+        </div>
+        
+
+        <div class="card-body">
+        <textarea style='width:100%; height:800px; ' class='form-control' disabled readonly>
+        This Project was build by by Mohit Chandra Joshi, Vikram Singh Bisht,  Pankaj Mehra ,Mahima Verma, Mansi Rawat Sanjay Joshi students of Amrapali Institute of Applied Sciences, Haldwani affiliated to Uttarakhand Technical University, Dehradun, India under the guidance of Dr. Naveen Tiwari Sir(Astt. Professor). 
+
+        This Project is for the partial fulfillment of MCA for the academic year 2018-19, and that the project has not formed on the basis for the award previously of any other degree, diploma, fellowship or any other similar title.
+
+        e-Teachers is a system by which many teachers of various educational institutions and all students of the institutes can benefit from it. Many teachers of various educational institutions easy to manage subjects, or gives assignment, study materials and various links like YouTube links, PDF links, videos etc. But this system will provide the teachers information, notes and various study materials.
+
+        This project is being launched as a need for the destination that is beneficial for both the institute and students. With this system the institute will be able to register teachers and then teachers will be able to update his profile or upload study materials for students so that it will help the students of institute to get the study materials and various links such as YouTube links, PDF links, and videos easily at anytime and develop their skills.
+ 
+        </textarea>
+        </div>    
+    </div>
+</div>
+
+<div id="includedContent"></div>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="assets/js/index.js"></script>
+<script src="assets/vendor/jquery/jquery.min.js"></script>
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/myjs.js"></script>
+<script src="assets/js/sb-admin.min.js"></script>
+
+</body>
+</html>
